@@ -4,14 +4,7 @@ import java.util.Arrays;
 
 public class MyFile
 {
-    int[][] arr;
-
-    public MyFile(int[][] arr)
-    {
-        this.arr = arr;
-    }
-
-    public void saveToFile()
+    public static void saveToFile(int[][] arr)
     {
         String filePath = "";
 
@@ -32,9 +25,10 @@ public class MyFile
         catch (IOException ignored) { }
     }
 
-    public void loadFromFile()
+    public static int[][] loadFromFile(int[][] oldArr)
     {
         String filePath = "";
+        int [][] newArr = new int[oldArr.length][oldArr.length];
 
         JFileChooser fileChooser = new JFileChooser();
         if(fileChooser.showOpenDialog(null)==JFileChooser.APPROVE_OPTION)
@@ -54,12 +48,14 @@ public class MyFile
                line = line.replace("]", "");
                for (String s : line.split(", "))
                {
-                   arr[i][j] = Integer.parseInt(s);
+                   newArr[i][j] = Integer.parseInt(s);
                    j++;
                }
                i++;
            }
        }
        catch (IOException ignored) { }
+
+       return newArr;
     }
 }

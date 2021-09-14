@@ -22,11 +22,11 @@ public class GameOfLife
 
     public void rebuild()
     {
-        int [][] old_arr = new int[arr.length][arr.length];
+        int [][] oldArr = new int[arr.length][arr.length];
 
         for(int i=0; i<arr.length; i++)
         {
-            System.arraycopy(arr[i], 0, old_arr[i], 0, arr[i].length);
+            System.arraycopy(arr[i], 0, oldArr[i], 0, arr[i].length);
         }
 
         for(int i=0; i<arr.length; i++)
@@ -35,17 +35,17 @@ public class GameOfLife
             {
                 int life_counter = 0;
 
-                if(i + 1 < arr.length && j + 1 < arr.length && old_arr[i + 1][j + 1] == 1) life_counter++;
-                if(i - 1 > 0 && j - 1 > 0 && old_arr[i - 1][j - 1] == 1) life_counter++;
+                if(i + 1 < arr.length && j + 1 < arr.length && oldArr[i + 1][j + 1] == 1) life_counter++;
+                if(i - 1 > 0 && j - 1 > 0 && oldArr[i - 1][j - 1] == 1) life_counter++;
 
-                if(i + 1 < arr.length && j - 1 > 0 && old_arr[i + 1][j - 1] == 1) life_counter++;
-                if(i - 1 > 0 && j + 1 < arr.length && old_arr[i - 1][j + 1] == 1) life_counter++;
+                if(i + 1 < arr.length && j - 1 > 0 && oldArr[i + 1][j - 1] == 1) life_counter++;
+                if(i - 1 > 0 && j + 1 < arr.length && oldArr[i - 1][j + 1] == 1) life_counter++;
 
-                if(i + 1 < arr.length  && old_arr[i + 1][j] == 1) life_counter++;
-                if(i - 1 > 0  && old_arr[i - 1][j] == 1) life_counter++;
+                if(i + 1 < arr.length  && oldArr[i + 1][j] == 1) life_counter++;
+                if(i - 1 > 0  && oldArr[i - 1][j] == 1) life_counter++;
 
-                if(j + 1 < arr.length && old_arr[i][j + 1] == 1) life_counter++;
-                if(j - 1 > 0 && old_arr[i][j - 1] == 1) life_counter++;
+                if(j + 1 < arr.length && oldArr[i][j + 1] == 1) life_counter++;
+                if(j - 1 > 0 && oldArr[i][j - 1] == 1) life_counter++;
 
                 if(life_counter == 3)
                 {

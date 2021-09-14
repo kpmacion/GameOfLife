@@ -17,11 +17,6 @@ public class Template
     {
         int[][] arr = new int[size][size];
 
-        for(int[] i : arr)
-        {
-            Arrays.fill(i, 0);
-        }
-
         arr[11][15] = 1;
         arr[11][21] = 1;
 
@@ -97,11 +92,6 @@ public class Template
     {
         int[][] arr = new int[size][size];
 
-        for(int[] i : arr)
-        {
-            Arrays.fill(i, 0);
-        }
-
         arr[11][35] = 1;
 
         arr[12][35] = 1;
@@ -154,11 +144,6 @@ public class Template
     {
         int[][] arr = new int[size][size];
 
-        for(int[] i : arr)
-        {
-            Arrays.fill(i, 0);
-        }
-
         arr[11][12] = 1;
         arr[12][13] = 1;
         arr[13][11] = 1;
@@ -186,11 +171,6 @@ public class Template
     public int[][] getLines()
     {
         int[][] arr = new int[size][size];
-
-        for(int[] i : arr)
-        {
-            Arrays.fill(i, 0);
-        }
 
         arr[20][13] = 1;
         arr[20][14] = 1;
@@ -236,11 +216,6 @@ public class Template
     {
         int[][] arr = new int[size][size];
 
-        for(int[] i : arr)
-        {
-            Arrays.fill(i, 0);
-        }
-
         arr[12][12] = 1;
         arr[12][13] = 1;
         arr[12][17] = 1;
@@ -275,11 +250,6 @@ public class Template
     public int[][] getSquare()
     {
         int[][] arr = new int[size][size];
-
-        for(int[] i : arr)
-        {
-            Arrays.fill(i, 0);
-        }
 
         arr[16][26] = 1;
         arr[16][27] = 1;

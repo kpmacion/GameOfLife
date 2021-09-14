@@ -20,8 +20,7 @@ public class Window extends JFrame
         this.game = game;
         this.colorChooser = new MyColorChooser();
         this.gameField = new GameField(game, colorChooser);
-        this.template = new Template(game.arr.length);
-        this.file = new MyFile(game.arr);
+        this.template = new Template(game.arr.length);;
 
         setTitle("Game of life");
         setSize(new Dimension(730, 400));
@@ -110,10 +109,10 @@ public class Window extends JFrame
         });
 
         JMenuItem open = new JMenuItem("\uD83D\uDCC2" + " Open");
-        open.addActionListener(e -> file.loadFromFile());
+        open.addActionListener(e -> game.arr = MyFile.loadFromFile(game.arr));
 
         JMenuItem save = new JMenuItem("\uD83D\uDCBE" + " Save");
-        save.addActionListener(e -> file.saveToFile());
+        save.addActionListener(e -> MyFile.saveToFile(game.arr));
 
         JMenu file = new JMenu("File");
         file.add(open);
